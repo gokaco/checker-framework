@@ -81,7 +81,7 @@ public class SignednessAnnotatedTypeFactory extends BaseAnnotatedTypeFactory {
     }
 
     /**
-     * If the tree is a local variable and the type is a byte, short, int or long, then adds the
+     * If the tree is a local variable and the type is a byte, short, int or long, then add the
      * UnknownSignedness annotation so that dataflow can refine it.
      */
     private void addUnknownSignednessToIntegralLocals(Tree tree, AnnotatedTypeMirror type) {
