@@ -181,13 +181,9 @@ class GZIPOutputStream extends DeflaterOutputStream {
      * Writes GZIP member header.
      */
     private void writeHeader() throws IOException {
-        @SuppressWarnings("value")//cast from "@IntVal(35615) int" to "@IntVal(31) byte" cannot be statically verified
-        byte a=(byte) GZIP_MAGIC;
-        @SuppressWarnings("value")//cast from "@IntVal(139) int" to "@IntVal(-117) byte" cannot be statically verified
-        byte b=(byte)(GZIP_MAGIC >> 8);
         out.write(new byte[] {
-                      a,        // Magic number (short)
-                      b,  // Magic number (short)
+                      (byte) GZIP_MAGIC,        // Magic number (short)
+                      (byte)(GZIP_MAGIC >> 8),  // Magic number (short)
                       Deflater.DEFLATED,        // Compression method (CM)
                       0,                        // Flags (FLG)
                       0,                        // Modification time MTIME (int)
