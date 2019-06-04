@@ -1511,7 +1511,7 @@ public final class Integer extends Number implements Comparable<Integer> {
      *     specified {@code int} value.
      * @since 1.5
      */
-    public static @Constant int reverse(@UnknownSignedness int i) {
+    public static @SignednessEither int reverse(@UnknownSignedness int i) {
         // HD, Figure 7-1
         i = (i & 0x55555555) << 1 | (i >>> 1) & 0x55555555;
         i = (i & 0x33333333) << 2 | (i >>> 2) & 0x33333333;
@@ -1544,7 +1544,7 @@ public final class Integer extends Number implements Comparable<Integer> {
      *     {@code int} value.
      * @since 1.5
      */
-    public static @Constant int reverseBytes(@UnknownSignedness int i) {
+    public static @SignednessEither int reverseBytes(@UnknownSignedness int i) {
         return ((i >>> 24)           ) |
                ((i >>   8) &   0xFF00) |
                ((i <<   8) & 0xFF0000) |
@@ -1560,7 +1560,7 @@ public final class Integer extends Number implements Comparable<Integer> {
      * @see java.util.function.BinaryOperator
      * @since 1.8
      */
-    public static @Constant int sum(@PolySigned int a, @PolySigned int b) {
+    public static @SignednessEither int sum(@PolySigned int a, @PolySigned int b) {
         return a + b;
     }
 
