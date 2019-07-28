@@ -11,7 +11,7 @@ import org.checkerframework.framework.qual.RelevantJavaTypes;
  *
  * @checker_framework.manual #signedness-checker Signedness Checker
  */
-@RelevantJavaTypes({Byte.class, Short.class, Integer.class, Long.class, Character.class})
+@RelevantJavaTypes({Number.class, Character.class})
 public class SignednessChecker extends BaseTypeChecker {
 
     @Override

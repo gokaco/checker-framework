@@ -20,7 +20,15 @@ import org.checkerframework.framework.qual.TypeKind;
 @Target({ElementType.TYPE_USE, ElementType.TYPE_PARAMETER})
 @SubtypeOf({UnknownSignedness.class})
 @DefaultFor(
-        typeKinds = {TypeKind.BYTE, TypeKind.INT, TypeKind.LONG, TypeKind.SHORT, TypeKind.CHAR}
+        typeKinds = {
+            TypeKind.BYTE,
+            TypeKind.INT,
+            TypeKind.LONG,
+            TypeKind.SHORT,
+            TypeKind.FLOAT,
+            TypeKind.DOUBLE,
+            TypeKind.CHAR
+        }
 
         // This is commented out until implicitly signed boxed types are implemented
         // correctly.
