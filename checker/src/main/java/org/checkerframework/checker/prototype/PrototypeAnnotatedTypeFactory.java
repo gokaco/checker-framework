@@ -65,6 +65,7 @@ public class PrototypeAnnotatedTypeFactory extends BaseAnnotatedTypeFactory {
     protected void addComputedTypeAnnotations(
             Tree tree, AnnotatedTypeMirror type, boolean iUseFlow) {
         addUnknownSignedToSomeLocals(tree, type);
+        addCommonSignedAnnotation(tree, type);
         super.addComputedTypeAnnotations(tree, type, iUseFlow);
     }
 
@@ -120,6 +121,7 @@ public class PrototypeAnnotatedTypeFactory extends BaseAnnotatedTypeFactory {
     }
 
     private void addUnknownSignedToSomeLocals(Tree tree, AnnotatedTypeMirror type) {
+
         switch (type.getKind()) {
             case BYTE:
             case SHORT:
