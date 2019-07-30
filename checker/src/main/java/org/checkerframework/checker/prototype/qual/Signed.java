@@ -18,6 +18,6 @@ import org.checkerframework.framework.qual.TypeKind;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE_USE, ElementType.TYPE_PARAMETER})
-@SubtypeOf(UnknownSigned.class)
+@SubtypeOf(UnknownSignedness.class)
 @DefaultFor(typeKinds = {TypeKind.BYTE, TypeKind.INT, TypeKind.LONG, TypeKind.SHORT, TypeKind.CHAR})
 public @interface Signed {}

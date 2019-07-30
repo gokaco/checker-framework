@@ -14,4 +14,4 @@ import org.checkerframework.framework.qual.SubtypeOf;
 @Target({ElementType.TYPE_USE, ElementType.TYPE_PARAMETER})
 @SubtypeOf({Unsigned.class, Signed.class})
 @QualifierForLiterals({LiteralKind.INT, LiteralKind.LONG, LiteralKind.CHAR})
-public @interface CommonSigned {}
+public @interface SignednessGlb {}
