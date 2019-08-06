@@ -1,6 +1,6 @@
 import org.checkerframework.checker.prototype.qual.*;
 
-/* The following test case should not pass(but it passes) as I have made the checker only relevant to
+/* The following test case should not pass the test(but it passes) as I have made the checker only relevant to
 Byte.class, Integer.class, Short.class, Long.class using RelevantJavaTypes  */
 class issue1 {
 
