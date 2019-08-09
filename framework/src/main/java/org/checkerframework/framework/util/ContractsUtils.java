@@ -434,7 +434,8 @@ public class ContractsUtils {
      *
      * @param anno wrapper annotation if multiple annotations are present, otherwise single
      *     annotation
-     * @param metaAnno postcondition meta-annotation
+     * @param metaAnno postcondition meta-annotation that indicates that an annotation is a
+     *     postcondition annotation
      */
     private Set<Postcondition> getPostConditionAnnotations(
             AnnotationMirror anno, AnnotationMirror metaAnno) {
@@ -539,7 +540,8 @@ public class ContractsUtils {
      *
      * @param anno wrapper annotation if multiple annotations are present, otherwise single
      *     annotation
-     * @param metaAnno conditional postcondition meta-annotation
+     * @param metaAnno conditional postcondition meta-annotation that indicates that an annotation
+     *     is a conditional postcondition annotation
      */
     private Set<ConditionalPostcondition> getConditionalPostConditionAnnotations(
             AnnotationMirror anno, AnnotationMirror metaAnno) {
