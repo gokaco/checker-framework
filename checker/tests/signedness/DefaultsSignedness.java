@@ -114,6 +114,7 @@ public class DefaultsSignedness {
         @Signed float sinFloat;
         @SignednessGlb float conFloat;
 
+        // :: error: (assignment.type.incompatible)
         sinFloat = testFloat;
 
         // :: error: (assignment.type.incompatible)
@@ -123,6 +124,7 @@ public class DefaultsSignedness {
         @Signed double sinDouble;
         @SignednessGlb double conDouble;
 
+        // :: error: (assignment.type.incompatible)
         sinDouble = testDouble;
 
         // :: error: (assignment.type.incompatible)

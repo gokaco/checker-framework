@@ -178,9 +178,11 @@ public class SignednessAnnotatedTypeFactory extends BaseAnnotatedTypeFactory {
          * Change the type of booleans to {@code @UnknownSignedness} so that the {@link
          * PropagationTreeAnnotator} does not change the type of them.
          */
-        private void annotateBooleanAsUnknownSignedness(AnnotatedTypeMirror type) {
+        private void annotateAsUnknownSignedness(AnnotatedTypeMirror type) {
             switch (type.getKind()) {
                 case BOOLEAN:
+                case FLOAT:
+                case DOUBLE:
                     type.addAnnotation(UNKNOWN_SIGNEDNESS);
                     break;
                 default:
@@ -200,13 +202,13 @@ public class SignednessAnnotatedTypeFactory extends BaseAnnotatedTypeFactory {
                 default:
                     // Do nothing
             }
-            annotateBooleanAsUnknownSignedness(type);
+            annotateAsUnknownSignedness(type);
             return null;
         }
 
         @Override
         public Void visitCompoundAssignment(CompoundAssignmentTree tree, AnnotatedTypeMirror type) {
-            annotateBooleanAsUnknownSignedness(type);
+            annotateAsUnknownSignedness(type);
             return null;
         }
     }
