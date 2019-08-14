@@ -1699,7 +1699,7 @@ public final class String
      * @return  the index of the first occurrence of the specified substring,
      *          or {@code -1} if there is no such occurrence.
      */
-    public @LTEqLengthOf("this") @SubstringIndexFor(value="this",offset="#1.length()-1") int indexOf(String str) {
+    public @LTEqLengthOf("this") @SubstringIndexFor(value="this",offset="#1.length()-1") @IndexOrLow("this") int indexOf(String str) {
         return indexOf(str, 0);
     }
 
@@ -1719,7 +1719,7 @@ public final class String
      *          starting at the specified index,
      *          or {@code -1} if there is no such occurrence.
      */
-    public @LTEqLengthOf("this") @SubstringIndexFor(value="this",offset="#1.length()-1") int indexOf(String str, int fromIndex) {
+    public @LTEqLengthOf("this") @SubstringIndexFor(value="this",offset="#1.length()-1") @IndexOrLow("this") int indexOf(String str, int fromIndex) {
         return indexOf(value, 0, value.length,
                 str.value, 0, str.value.length, fromIndex);
     }
@@ -1808,7 +1808,7 @@ public final class String
      * @return  the index of the last occurrence of the specified substring,
      *          or {@code -1} if there is no such occurrence.
      */
-    public @LTEqLengthOf("this") @SubstringIndexFor(value="this",offset="#1.length()-1") int lastIndexOf(String str) {
+    public @LTEqLengthOf("this") @SubstringIndexFor(value="this",offset="#1.length()-1") @IndexOrLow("this") int lastIndexOf(String str) {
         return lastIndexOf(str, value.length);
     }
 
@@ -1828,7 +1828,7 @@ public final class String
      *          searching backward from the specified index,
      *          or {@code -1} if there is no such occurrence.
      */
-    public @LTEqLengthOf("this") @SubstringIndexFor(value="this",offset="#1.length()-1") int lastIndexOf(String str, int fromIndex) {
+    public @LTEqLengthOf("this") @SubstringIndexFor(value="this",offset="#1.length()-1") @IndexOrLow("this") int lastIndexOf(String str, int fromIndex) {
         return lastIndexOf(value, 0, value.length,
                 str.value, 0, str.value.length, fromIndex);
     }
