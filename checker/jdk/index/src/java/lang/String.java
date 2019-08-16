@@ -1699,6 +1699,7 @@ public final class String
      * @return  the index of the first occurrence of the specified substring,
      *          or {@code -1} if there is no such occurrence.
      */
+    @Pure
     public @LTEqLengthOf("this") @SubstringIndexFor(value="this",offset="#1.length()-1") int indexOf(String str) {
         return indexOf(str, 0);
     }
@@ -2134,6 +2135,9 @@ public final class String
      * @return true if this string contains {@code s}, false otherwise
      * @since 1.5
      */
+    @SuppressWarnings("value")
+    @EnsuresIntRangeIf(result = true, expression = "indexOf(#1)", targetFrom=0)
+    @Pure
     public boolean contains(CharSequence s) {
         return indexOf(s.toString()) > -1;
     }
